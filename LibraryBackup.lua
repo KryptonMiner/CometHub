@@ -26,17 +26,15 @@ lib.new = function(name)
         input = rconsoleinput,
         print = function(text,color)
             if not color then color = "WHITE" end
-            local Color = ("@@%s@@"):format(color:upper():gsub(" ","_"))
+            local Color = ("%s"):format(color:upper():gsub(" ","_"))
             rconsoleprint(Color)
-            rconsoleprint(text.."\n")
-            rconsoleprint("@@WHITE@@")
+            rconsoleprint(text.."\n", "white")
         end,
         line = function(text,color)
             if not color then color = "WHITE" end
-            local Color = ("@@%s@@"):format(color:upper():gsub(" ","_"))
+            local Color = ("%s"):format(color:upper():gsub(" ","_"))
             rconsoleprint(Color)
-            rconsoleprint(text)
-            rconsoleprint("@@WHITE@@")
+            rconsoleprint(text.."\n", "white")
         end,
     }
     
