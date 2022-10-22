@@ -24,13 +24,11 @@ lib.new = function(name)
         print = function(text,color)
             if not color then color = "white" end
             local Color = ("%s"):format(color:upper():gsub(" ","_"))
-            consoleprint(Color)
             consoleprint(text.."\n", "white")
         end,
         line = function(text,color)
             if not color then color = "WHITE" end
             local Color = ("%s"):format(color:upper():gsub(" ","_"))
-            consoleprint(Color)
             consoleprint(text.."\n", "white")
         end,
     }
