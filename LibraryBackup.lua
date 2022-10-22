@@ -18,25 +18,25 @@ lib.new = function(name)
 
     local cs = {
         iprint = printconsole, -- internal ui print
-        clear = rconsoleclear,
-        setname = rconsolename,
-        error = rconsoleerr,
-        warn = rconsolewarn,
-        info = rconsoleinfo,
-        input = rconsoleinput,
+        clear = consoleclear,
+        setname = consolename,
+        error = consoleerr,
+        warn = consolewarn,
+        info = consoleinfo,
+        input = consoleinput,
         print = function(text,color)
             if not color then color = "WHITE" end
             local Color = ("@@%s@@"):format(color:upper():gsub(" ","_"))
-            rconsoleprint(Color)
-            rconsoleprint(text.."\n")
-            rconsoleprint("@@WHITE@@")
+            consoleprint(Color)
+            consoleprint(text.."\n")
+            consoleprint("@@WHITE@@")
         end,
         line = function(text,color)
             if not color then color = "WHITE" end
             local Color = ("@@%s@@"):format(color:upper():gsub(" ","_"))
-            rconsoleprint(Color)
-            rconsoleprint(text)
-            rconsoleprint("@@WHITE@@")
+            consoleprint(Color)
+            consoleprint(text)
+            consoleprint("@@WHITE@@")
         end,
     }
     
