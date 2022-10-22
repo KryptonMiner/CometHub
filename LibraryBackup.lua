@@ -20,21 +20,18 @@ lib.new = function(name)
         iprint = printconsole, -- internal ui print
         clear = consoleclear,
         setname = consolesettitle,
-        error = rconsoleerr,
-        warn = rconsolewarn,
-        info = rconsoleinfo,
-        input = rconsoleinput,
+        input = consoleinput,
         print = function(text,color)
             if not color then color = "white" end
             local Color = ("%s"):format(color:upper():gsub(" ","_"))
-            rconsoleprint(Color)
-            rconsoleprint(text.."\n", "white")
+            consoleprint(Color)
+            consoleprint(text.."\n", "white")
         end,
         line = function(text,color)
             if not color then color = "WHITE" end
             local Color = ("%s"):format(color:upper():gsub(" ","_"))
-            rconsoleprint(Color)
-            rconsoleprint(text.."\n", "white")
+            consoleprint(Color)
+            consoleprint(text.."\n", "white")
         end,
     }
     
@@ -65,7 +62,7 @@ lib.new = function(name)
             
             function load()
                 cs.line("[","bred")
-                cs.line("-",green)
+                cs.line("-","green")
                 cs.line("] ","bred")
                 cs.line(name,"cyan")
                 cs.print(" <call "..name..">")
