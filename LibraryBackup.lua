@@ -5,7 +5,7 @@ wait(.1)
 getgenv().ReloadScript = false
 
 lib.new = function(name)
-    local uiname = name or "Console Lib"
+    local uiname = name or "Console Hub"
     local func = {}
     local CurrentPage = ""
     local Layers = {}
@@ -18,8 +18,8 @@ lib.new = function(name)
 
     local cs = {
         iprint = printconsole, -- internal ui print
-        clear = rconsoleclear,
-        setname = rconsolename,
+        clear = consoleclear,
+        setname = consolesettitle,
         error = rconsoleerr,
         warn = rconsolewarn,
         info = rconsoleinfo,
