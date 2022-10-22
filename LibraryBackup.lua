@@ -25,7 +25,7 @@ lib.new = function(name)
         info = rconsoleinfo,
         input = rconsoleinput,
         print = function(text,color)
-            if not color then color = "WHITE" end
+            if not color then color = "white" end
             local Color = ("%s"):format(color:upper():gsub(" ","_"))
             rconsoleprint(Color)
             rconsoleprint(text.."\n", "white")
@@ -64,9 +64,9 @@ lib.new = function(name)
             }
             
             function load()
-                cs.line("[","Light Red")
+                cs.line("[","bred")
                 cs.line("-",green)
-                cs.line("] ","Light Red")
+                cs.line("] ","bred")
                 cs.line(name,"cyan")
                 cs.print(" <call "..name..">")
             end
@@ -90,9 +90,9 @@ lib.new = function(name)
                     ["true"] = "green",
                     ["false"] = "red"
                 }
-                cs.line("[","Light Red")
+                cs.line("[","bred")
                 cs.line("*",color[tostring(Value.toggle[name].Value)])
-                cs.line("] ","Light Red")
+                cs.line("] ","bred")
                 cs.line(name,"cyan")
                 cs.print((" <toggle %s {true/1,false/0}>"):format(name))
             end
@@ -118,9 +118,9 @@ lib.new = function(name)
                 color[max] = "red"
                 color[min] = "green"
                 
-                cs.line("[","Light Red")
+                cs.line("[","bred")
                 cs.line(Value.int[name].Value,color[tostring(Value.int[name].Value)])
-                cs.line("] ","Light Red")
+                cs.line("] ","bred")
                 cs.line(name,"cyan")
                 cs.print((" <int %s {number between %s}>"):format(name,min.."-"..max))
             end
@@ -145,9 +145,9 @@ lib.new = function(name)
             
             function load()
                 
-                cs.line("[","Light Red")
+                cs.line("[","bred")
                 cs.line(Value.str[name].Value)
-                cs.line("] ","Light Red")
+                cs.line("] ","bred")
                 cs.line(name,"cyan")
                 cs.print((" <str %s {string/text}>"):format(name))
             end
@@ -168,9 +168,9 @@ lib.new = function(name)
             }
             
             function load()
-                cs.line("[","Light Red")
+                cs.line("[","bred")
                 cs.line(Value.list[name].Value)
-                cs.line("] ","Light Red")
+                cs.line("] ","bred")
                 cs.line(name,"cyan")
                 local allist = ""
                 for i,v in pairs(list) do
